@@ -1,0 +1,129 @@
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --border: #d7dce1;
+  --text: #1b2430;
+  --muted: #5b6572;
+  --primary: #0f5ea8;
+  --primary-dark: #0c4a85;
+  --success: #1d7a4c;
+  --success-bg: #e8f6ee;
+  --danger: #b3261e;
+  --danger-bg: #fdecea;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); line-height: 1.5; }
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+.app-title { font-size: 1.3rem; margin-bottom: 16px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.progress-label { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+
+.scenario-fieldset { border: none; padding: 0; margin: 0; }
+.prompt { font-weight: 600; font-size: 1.05rem; padding: 0; margin: 0 0 14px; }
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.option input { margin-top: 3px; }
+
+button {
+  margin-top: 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: var(--primary-dark); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.feedback {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.feedback.correct { background: var(--success-bg); border-color: var(--success); }
+.feedback.incorrect { background: var(--danger-bg); border-color: var(--danger); }
+.feedback-label { font-weight: 700; margin: 0 0 6px; }
+.feedback.correct .feedback-label { color: var(--success); }
+.feedback.incorrect .feedback-label { color: var(--danger); }
+
+.completion { text-align: center; }
+
+.score-summary { margin-bottom: 4px; }
+.score { font-size: 2rem; font-weight: 700; margin: 6px 0 0; }
+.score-percent { font-size: 1.1rem; font-weight: 500; color: var(--muted); }
+
+.score-bar-track {
+  height: 10px;
+  border-radius: 999px;
+  background: #e6e9ec;
+  overflow: hidden;
+  margin: 12px 0 10px;
+}
+.score-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.score-message { color: var(--muted); margin: 0 0 4px; }
+
+.review { margin-top: 28px; text-align: left; }
+.review h2 { font-size: 1.05rem; margin-bottom: 10px; }
+
+.review-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+
+.review-item {
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.review-item.correct { border-left-color: var(--success); }
+.review-item.incorrect { border-left-color: var(--danger); }
+
+.review-status { font-weight: 700; font-size: 0.85rem; margin: 0 0 6px; }
+.review-item.correct .review-status { color: var(--success); }
+.review-item.incorrect .review-status { color: var(--danger); }
+
+.review-prompt { font-weight: 600; margin: 0 0 8px; }
+.review-line { margin: 0 0 4px; font-size: 0.9rem; }
+.review-explanation { margin: 8px 0 0; font-size: 0.9rem; color: var(--muted); }
+
+@media (max-width: 420px) {
+  .app { padding: 14px 12px 40px; }
+  .card { padding: 14px; }
+}
