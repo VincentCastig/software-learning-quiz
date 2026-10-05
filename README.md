@@ -71,9 +71,6 @@ width specifically, not just resized from desktop.
 - A loading/empty state for the (currently nonexistent) case of an empty
   question set, mostly as a habit for anything that will eventually read
   from an API.
-- A way to review *which* questions were missed on the completion screen,
-  not just the score — I scoped it out to keep this small per the
-  instructions, but it's the first thing I'd add next.
 - Unit tests for the scoring logic and the "can't change answer after
   submit" behavior.
 
